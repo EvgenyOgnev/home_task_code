@@ -12,30 +12,30 @@ void FillPrintArray(int[] collection)
     while (index < Length)
     {
         collection[index] = new Random().Next(1, 100);
-        if(index < (Length - 1))
+        if (index < (Length - 1))
         {
-            Console.Write(collection[index] + ", ");    
+            Console.Write(collection[index] + ", ");
         }
         else Console.Write(collection[index] + "]");
         index++;
     }
 }
-void MaxDifferenceMin(int[] col)
+void MaxMinDifference(int[] col)
 {
     int max = col[0];
     int min = col[0];
-    for(int position = 0; position < col.Length; position++)
+    for (int position = 0; position < col.Length; position++)
     {
-        if(col[position] > max) max = col[position];
+        if (col[position] > max) max = col[position];
         else
         {
-            if(col[position] < min) min = col[position];
-        }  
-    }   
+            if (col[position] < min) min = col[position];
+        }
+    }
     Console.WriteLine($"разницa между max и min элементами = {max - min}");
 }
 
 int[] array = new int[7];
 FillPrintArray(array);
 Console.WriteLine();
-MaxDifferenceMin(array);
+MaxMinDifference(array);
